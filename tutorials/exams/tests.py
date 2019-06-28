@@ -4,9 +4,7 @@ from questions.models import Question
 
 class TestExam(APITestCase):
     def setUp(self):
-        exam = Exam.objects.create(
-            description="question one"
-            )
+        pass
 
     def test_create_test(self):
 
@@ -33,9 +31,8 @@ class TestExam(APITestCase):
         exam = Exam.objects.create(
             description="first test"
         )
-        exam.add_questions()
         questions_count = exam.questions.count()
-        print(exam.questions.last())
+
         self.assertEqual(questions_count,3)
 
 

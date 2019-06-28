@@ -1,6 +1,7 @@
 from django.db import models
 from questions.models import Question
 from random import sample
+from django.db.models.signals import post_save
 
 GRADE_CHOICES = [
     ("pass","pass"),
@@ -36,16 +37,14 @@ class Exam(models.Model):
            
 
     
-    def add_questions(self):
+def add_questions(instance,sender,*args,**kwargs):
 
-        questionIndices = sample(range(1, Question.objects.count()), 3) #TODO : change 3 to 25
-        print(questionIndices)
-        qs = Question.objects.filter(pk__in=questionIndices)
-        self.questions.set(qs)
+    questionIndices = sample(range(1, Question.objects.count()), 3) #TODO : change 3 to 25
+    qs = Question.objects.filter(pk__in=questionIndices)
+    instance.questions.set(qs)
 
-    def save(self,*argds,**kwargs):
-        self.add_questions()
-        super(Exam, self).save(*args, **kwargs)
+post_save.connect(add_questions,sender=Exam)
+        
 
 
 
