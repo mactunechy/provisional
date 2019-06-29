@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'memberships',
     'users.apps.UsersConfig',
-    'rest_framework_jwt'
+    'rest_framework_jwt',
+    'tokens'
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

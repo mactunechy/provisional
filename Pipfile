@@ -13,6 +13,8 @@ pillow = "*"
 djangorestframework-jwt = "*"
 django-rest-auth = "*"
 django-allauth = "*"
+paynow = "*"
+stringgenerator = "*"
 
 [requires]
 python_version = "3.7"

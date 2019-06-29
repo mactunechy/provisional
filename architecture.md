@@ -24,6 +24,13 @@
     Method
     -GetTotalMark
 
+**Token**
+tokens for subscription validation
+
+
+===============================================================================================================
+
+
 ***TODOS***
 Notes
     CRUD
@@ -37,7 +44,7 @@ TESTS
 
 --- authentication and authorization
     -- only stuff can add questions                 done
-    -- register user -- custom user Model
+    -- register user -- custom user Model           done
 
 
 MEMBERSHIP AN PRICING
